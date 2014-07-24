@@ -5,6 +5,23 @@ SET foreign_key_checks = 0;
 SET time_zone = '+02:00';
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+DROP TABLE IF EXISTS `cv`;
+CREATE TABLE `cv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `extern_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `mail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `mobile` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `date_of_birth` datetime NOT NULL,
+  `nationality` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `mother_tongue` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `non_parsed_html` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -48,4 +65,4 @@ INSERT INTO `user_role` (`user_id`, `role_id`) VALUES
 (2,	3),
 (3,	2);
 
--- 2014-07-24 08:34:38
+-- 2014-07-24 09:34:51

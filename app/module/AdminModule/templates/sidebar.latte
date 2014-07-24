@@ -44,6 +44,18 @@
                 </a>
             </li>
 
+            <li n:if="$isAllowedDownloaded"
+                class="start{ifCurrent Downloaded:*} active{/ifCurrent}">
+                <a n:href="Downloaded:">
+                    <i class="fa fa-cloud-download"></i>
+                    <span class="title">
+                        Downloaded Data
+                    </span>
+                    <span class="selected">
+                    </span>
+                </a>
+            </li>
+
             <li n:if="$isAllowedUsers"
                 class="{ifCurrent Users:*} active{/ifCurrent} last">
                 <a n:href="Users:">

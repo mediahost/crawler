@@ -1,0 +1,69 @@
+{block breadcrumbLast}
+<li><a n:href="Downloaded:">Downloaded Data</a></li>
+    {/block}
+
+{block content}
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box grey-cascade">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cloud-download"></i>Dowloaded CVs
+                </div>
+            </div>
+            <div class="portlet-body">
+                <table class="datatable table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Extern ID
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Mail
+                            </th>
+                            <th>
+                                View
+                            </th>
+                            <th>
+                                Delete
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr n:foreach="$cvs as $cv"
+                            class="odd gradeX">
+                            <td>
+                                {$cv->id}
+                            </td>
+                            <td>
+                                {$cv->externId}
+                            </td>
+                            <td>
+                                {$cv->name}
+                            </td>
+                            <td>
+                                {$cv->mail}
+                            </td>
+                            <td>
+                                <a n:href="Downloaded:view, $cv->id">
+                                    View
+                                </a>
+                            </td>
+                            <td>
+                                <a n:href="Downloaded:delete, $cv->id" class="delete-confirm">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

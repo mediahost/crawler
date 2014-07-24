@@ -23,6 +23,7 @@ abstract class BasePresenter extends BaseBasePresenter
     {
         parent::beforeRender();
         $this->template->isAllowedDashboard = BaseBasePresenter::isAllowed("admin", "view");
+        $this->template->isAllowedDownloaded = BaseBasePresenter::isAllowed("downloaded", "view");
         $this->template->isAllowedUsers = BaseBasePresenter::isAllowed("users", "view");
         $this->template->isAllowedUsersAdd = BaseBasePresenter::isAllowed("users", "add");
     }

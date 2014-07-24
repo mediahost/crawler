@@ -33,6 +33,8 @@ class Permission extends \Nette\Security\Permission
         $this->addResource('front');
         $this->addResource('admin');        
         $this->addResource('users');
+        $this->addResource('downloaded');
+        $this->addResource('cvs');
         $this->addResource('service');
     }
 
@@ -54,6 +56,8 @@ class Permission extends \Nette\Security\Permission
         
         $this->allow('admin', 'admin', 'view');
         $this->allow('admin', 'users');
+        $this->allow('admin', 'downloaded');
+        $this->allow('admin', 'cvs');
 
         $this->allow('superadmin'); // všechna práva a zdroje pro administrátora
     }

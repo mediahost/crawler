@@ -41,6 +41,8 @@ class UsersPresenter extends BasePresenter
 
     public function actionAdd()
     {
+        $this->isAllowed("users", "edit");
+        
         $this->user = new \App\Model\Entity\User;
         $this->userFormFactory->setAdding();
         $this->setView("edit");
@@ -48,6 +50,8 @@ class UsersPresenter extends BasePresenter
 
     public function actionEdit($id)
     {
+        $this->isAllowed("users", "edit");
+        
         $this->user = $this->userFacade->find($id);
     }
 
@@ -64,6 +68,8 @@ class UsersPresenter extends BasePresenter
 
     public function actionDelete($id)
     {
+        $this->isAllowed("users", "delete");
+        
         $this->user = $this->userFacade->find($id);
         if ($this->user) {
             if (!$this->user->getProjectsCount()) {
