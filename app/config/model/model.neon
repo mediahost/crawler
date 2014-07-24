@@ -1,0 +1,3 @@
+services:
+    - App\Model\Facade\UserFacade(@doctrine.dao(App\Model\Entity\User))
+    - App\Model\Facade\RoleFacade(@doctrine.dao(App\Model\Entity\Role))
