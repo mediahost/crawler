@@ -22,6 +22,13 @@ class RouterFactory
 
 	$router[] = new Route('index.php', 'Front:Default:default', Route::ONE_WAY);
 
+	$router[] = $adminRouter = new RouteList('Downloader');
+	$adminRouter[] = new Route("downloader/<presenter>/<action>[/<id>]", array(
+	    'presenter' => "Default",
+	    'action' => "default",
+	    'id' => NULL,
+	));
+
 	$router[] = $adminRouter = new RouteList('Admin');
 	$adminRouter[] = new Route("admin/<presenter>/<action>[/<id>]", array(
 	    'presenter' => "Dashboard",
